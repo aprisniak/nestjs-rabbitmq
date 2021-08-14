@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  rabbitmq:
+    container_name: rabbit
+    image: docker.io/bitnami/rabbitmq:3.8
+    ports:
+      - '4369:4369'
+      - '5672:5672'
+      - '25672:25672'
+      - '15672:15672'
+    restart: always
+    environment:
+      - RABBITMQ_SECURE_PASSWORD=yes
+      - RABBITMQ_USERNAME=admin
+      - RABBITMQ_PASSWORD=admin
+      - RABBITMQ_CLUSTER_NODE_NAME=rabbit@stats
+      - RABBITMQ_ERL_COOKIE=s3cr3tc00ki3
+    volumes:
+      - './rabbitmq_data:/bitnami'

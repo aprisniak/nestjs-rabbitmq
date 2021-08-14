@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "@sotream/eslint-config-nestjs"
+  ],
+  "rules": {
+    "node/no-extraneous-import": "off",
+    "import/no-extraneous-dependencies": "off"
+  }
+}
